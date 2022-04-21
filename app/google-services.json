@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3702503505",
+    "project_id": "mis-articulos-d3e65",
+    "storage_bucket": "mis-articulos-d3e65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3702503505:android:fefa36359d4aade204a070",
+        "android_client_info": {
+          "package_name": "com.grover101.misarticulos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3702503505-ph10ocp4ga696h9qkhgchost9pqsgq7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw_KZxotT-b_ZOKzuonkx_SEntHyoVMi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3702503505-ph10ocp4ga696h9qkhgchost9pqsgq7u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
