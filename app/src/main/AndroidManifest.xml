@@ -11,6 +11,7 @@
         android:theme="@style/Theme.MisArticulos">
         <activity
             android:name=".UsuarioActivity"
+            android:label="Informacion del Usuario"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
