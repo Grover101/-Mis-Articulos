@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.grover101.misarticulos">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MisArticulos">
         <activity
-            android:name=".UsuarioActivity"
-            android:label="Informacion del Usuario"
+            android:name=".BaseDatosActivity"
             android:exported="true" />
+        <activity
+            android:name=".UsuarioActivity"
+            android:exported="true"
+            android:label="Informacion del Usuario" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
