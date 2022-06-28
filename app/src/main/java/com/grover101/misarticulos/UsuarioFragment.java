@@ -1,7 +1,10 @@
 package com.grover101.misarticulos;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.collection.LruCache;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -71,6 +78,28 @@ public class UsuarioFragment extends Fragment {
         nombre.setText(" " + usuario.getDisplayName());
         correo.setText(" " + usuario.getEmail());
         proveedor.setText(" " + usuario.getProviderId());
+
+        RequestQueue colaPeticiones = Volley.newRequestQueue(getActivity() .getApplicationContext());
+        ImageLoader lectorImagenes = new ImageLoader(colaPeticiones, new ImageLoader.ImageCache() {
+            private final LruCache<String, Bitmap> cache = new LruCache<String, Bitmap>(10);
+            public void putBitmap(String url, Bitmap bitmap)
+            {
+                cache.put(url, bitmap);
+            }
+            public Bitmap getBitmap(String url)
+            {
+                return cache.get(url);
+            }
+        });
+
+        // Foto de usuario
+        Uri urlImagen = usuario.getPhotoUrl();
+        if (urlImagen != null)
+        {
+            NetworkImageView fotoUsuario = (NetworkImageView) vista.findViewById(R.id.imagen);
+            fotoUsuario.setImageUrl(urlImagen.toString(), lectorImagenes);
+        }
+
         return vista;
     }
 }
