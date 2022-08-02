@@ -74,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Ejemplo Firebase", "Error al leer: "+ error.toException());
             }
         });
+
+        Button btn_mostrar = (Button) findViewById(R.id.btn_mostrar);
+        btn_mostrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BaseDatosActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void lanzarDatosUsuario(){
